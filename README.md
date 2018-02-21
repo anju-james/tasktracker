@@ -24,7 +24,7 @@ Application Design:
 •	User can enter the time he has worked upon as minutes (increment of 15) in each of the tasks, before marking it as complete.
 
 
-Now you can visit [`tasktracker`](http://tasktracker.curiousmind.tech/) from your browser.
+Now you can visit [`tasktracker`](http://tasks1.curiousmind.tech/) from your browser.
 
 
 To start your Phoenix server:
