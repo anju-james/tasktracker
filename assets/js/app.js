@@ -24,6 +24,8 @@ function initTimetracking() {
     if ($('.issue-time-blocks').length == 0) {
         return;
     }
+
+    $('#startstop_button').click(startStopTimer);
     loadTimedata();
 }
 
@@ -44,12 +46,14 @@ function loadTimedata() {
 
 
             if (window.permit_edit == "true") {
-                entryList += " <span><a class=\"btn btn-default btn-xs\" onclick='window.updateTimeEntry("+timeblock.id+")'>Update</a></span>\n" +
-                    "<span><a class='btn btn-danger btn-xs' onclick='window.deleteTimeEntry("+timeblock.id+")'>Delete</a></span>";
+                entryList += " <span><a class='updateblock-button btn btn-default btn-xs' data-timeblock="+timeblock.id+">Update</a></span>\n" +
+                    "<span><a class='btn btn-danger btn-xs deleteblock-button' data-timeblock="+timeblock.id+">Delete</a></span>";
             }
             entryList += "</td></tr>"
         }
         $('.issue-time-blocks-content').html(entryList);
+        $('.updateblock-button').click(updateTimeEntry);
+        $('.deleteblock-button').click(deleteTimeEntry);
     });
 
 }
@@ -89,7 +93,8 @@ function getFormattedTime(dateString) {
     return formattedHours+":"+formattedMinutes;
 }
 
-window.updateTimeEntry = function (entryId) {
+function updateTimeEntry(ev) {
+    let entryId = $(ev.target).data('timeblock');
     let startDate = $('#startdate_'+entryId).val();
     let endDate = $('#enddate_'+entryId).val();
     let startTime = $('#starttime_'+entryId).val();
@@ -126,7 +131,8 @@ window.updateTimeEntry = function (entryId) {
 
 };
 
-window.deleteTimeEntry = function (entryId) {
+function deleteTimeEntry(ev) {
+    let entryId = $(ev.target).data('timeblock');
     $.ajax(window.time_path + "/" + entryId, {
         method: "delete",
         dataType: "json",
@@ -142,7 +148,7 @@ window.deleteTimeEntry = function (entryId) {
     });
 };
 
-window.startStopTimer = function () {
+function startStopTimer(ev) {
     $('#startstop_button').each( (_, bb) => {
         let starttime = $(bb).data('starttime');
         if (starttime == "") {

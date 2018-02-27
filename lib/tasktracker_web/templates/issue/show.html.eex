@@ -31,7 +31,7 @@
   <div class="card-block">
     <h4 class="card-title">Record your work-time on this task</h4>
     <p id="tracked_activity_details" class="card-text">Click on the start button and start recording, and stop timer to save the change.</p>
-    <button id="startstop_button" <%= if !@issue.user_id || !@current_user || @issue.user_id != @current_user.id do %> disabled <% end %> data-starttime="" onclick="window.startStopTimer()" class="btn btn-success">Start Timer</button>
+    <button id="startstop_button" <%= if !@issue.user_id || !@current_user || @issue.user_id != @current_user.id do %> disabled <% end %> data-starttime="" class="btn btn-success">Start Timer</button>
   </div>
 </div>
 
