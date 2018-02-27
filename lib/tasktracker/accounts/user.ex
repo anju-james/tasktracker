@@ -7,9 +7,8 @@ defmodule Tasktracker.Accounts.User do
   schema "users" do
     field :email, :string
     field :name, :string
-    #has_many :issues, Tasktracker.Tasks.Issue
-
-
+    field :role, :string
+    field :manager_id, :integer
 
     timestamps()
   end
@@ -17,7 +16,7 @@ defmodule Tasktracker.Accounts.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:name, :email])
+    |> cast(attrs, [:name, :email, :role, :manager_id])
     |> validate_required([:name, :email])
     |> validate_length(:name, max: 255)
     |> validate_length(:email, max: 255)
@@ -25,3 +24,4 @@ defmodule Tasktracker.Accounts.User do
     |> validate_format(:email, ~r/@/, message: "Not a valid email address")
   end
 end
+

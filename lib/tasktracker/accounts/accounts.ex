@@ -118,4 +118,13 @@ defmodule Tasktracker.Accounts do
   """
   def get_user(id), do: Repo.get(User, id)
 
+  @doc """
+  Gets all users with same manager.
+
+  """
+  def get_team(manager_id) do
+    Repo.all(from user in User, where: user.manager_id == ^manager_id)
+  end
+
+
 end

@@ -12,6 +12,16 @@
     <%= @user.email %>
   </li>
 
+   <li>
+     <strong>Role:</strong>
+     <%= @user.role %>
+   </li>
+
+   <li>
+     <strong>Manager:</strong>
+     <%= if @user.manager_id, do: @manager.name , else: "No manager"%>
+   </li>
+
 </ul>
 
 <span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>

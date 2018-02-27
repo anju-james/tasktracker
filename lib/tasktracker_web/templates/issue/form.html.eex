@@ -17,25 +17,21 @@
     <%= error_tag f, :description %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :time_spent_mins, class: "control-label" %>
-    <%= number_input f, :time_spent_mins, class: "form-control" %>
-    <%= error_tag f, :time_spent_mins %>
-  </div>
-
    <div class="form-group">
-    <%= label f, :user_id, class: "control-label" %>
-    <%= select f, :user_id, Enum.map(@users, &{&1.name, &1.id}), prompt: "Not Assigned", class: "form-control form-control-lg" %>
-    <%= error_tag f, :user_id %>
+     <%= if @current_user && @current_user.role != "user" do %>
+        <%= label f, :user_id, class: "control-label" %>
+        <%= select f, :user_id, Enum.map(@users, &{&1.name, &1.id}), prompt: "Not Assigned", class: "form-control form-control-lg" %>
+        <%= error_tag f, :user_id %>
+     <% end %>
    </div>
 
   <div class="form-group">
-    <%= checkbox f, :completed, class: "checkbox" %>
-    <%= label f, :completed, "Mark As Completed", class: "control-label" %>
-    <%= error_tag f, :completed %>
+    <%= if @current_user && @current_user.id  == @issue.user_id do %>
+         <%= checkbox f, :completed, class: "checkbox" %>
+         <%= label f, :completed, "Mark As Completed", class: "control-label" %>
+         <%= error_tag f, :completed %>
+    <% end %>
   </div>
-
-
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>

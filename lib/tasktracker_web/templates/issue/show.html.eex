@@ -1,3 +1,10 @@
+<script>
+    window.issue_time_index_path = "<%= time_block_path(@conn, :index, %{"issue_id" => @issue.id}) %>";
+    window.time_path = "<%= time_block_path(@conn, :index, %{}) %>";
+    window.current_issue_id = "<%= @issue.id %>";
+    window.permit_edit = "<%= if @issue.user_id && @current_user && @issue.user_id == @current_user.id, do: true , else: false %>"
+</script>
+
 <h2>Task Details</h2>
 
 <div class="card">
@@ -6,15 +13,39 @@
     <p class="card-text"><%= @issue.description %></p>
   </div>
   <ul class="list-group list-group-flush">
-      <li class="list-group-item"><strong>Time Spent: </strong> <%= if @issue.time_spent_mins, do: (@issue.time_spent_mins |> to_string) <>" minutes " , else: ""  %></li>
       <li class="list-group-item"><strong>Assigned User: </strong> <%= @user_name %></li>
       <li class="list-group-item"><strong>Completed: </strong><%= @issue.completed %></li>
   </ul>
   <div class="card-block">
     <%= link "Back", to: issue_path(@conn, :index), class: "btn btn-default" %>
-    <%= if @issue.user_id == nil || @issue.user_id == @current_user.id do %>
-        <%= link "Edit", to: issue_path(@conn, :edit, @issue), class: "btn btn-primary" %>
+    <%= if @issue.user_id == nil || @issue.user_id == @current_user.id || @current_user.role == "manager" do %>
+        <%= link "Edit Issue", to: issue_path(@conn, :edit, @issue), class: "btn btn-primary" %>
      <% end %>
   </div>
+</div>
+
+<div class="card" style="margin-top: 20px">
+  <div class="card-header">
+    Record Activity
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Record your work-time on this task</h4>
+    <p id="tracked_activity_details" class="card-text">Click on the start button and start recording, and stop timer to save the change.</p>
+    <button id="startstop_button" <%= if !@issue.user_id || !@current_user || @issue.user_id != @current_user.id do %> disabled <% end %> data-starttime="" onclick="window.startStopTimer()" class="btn btn-success">Start Timer</button>
+  </div>
+</div>
+
+<div class="issue-time-blocks">
+<table class="table">
+    <thead>
+        <tr>
+          <th class="col-md-4">Start time</th>
+          <th class="col-md-4">End Time</th>
+          <th class="col-md-4 text-right"></th>
+        </tr>
+    </thead>
+    <tbody class="issue-time-blocks-content">
+    </tbody>
+</table>
 </div>
 

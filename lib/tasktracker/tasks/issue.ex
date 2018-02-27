@@ -19,13 +19,11 @@ defmodule Tasktracker.Tasks.Issue do
   @doc false
   def changeset(%Issue{} = issue, attrs) do
     issue
-    |> cast(attrs, [:title, :description, :time_spent_mins, :completed, :user_id])
+    |> cast(attrs, [:title, :description, :completed, :user_id])
     |> validate_required([:title, :description])
     |> validate_length(:title, max: 255)
     |> validate_length(:description, max: 255)
     |> unique_constraint(:title)
-    |> validate_time_increment(:time_spent_mins)
-    |> validate_issue_complete()
   end
 
 

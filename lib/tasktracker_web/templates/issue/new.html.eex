@@ -19,11 +19,13 @@
     <%= error_tag f, :description %>
   </div>
 
+  <%= if @current_user && @current_user.role == "manager" do %>
   <div class="form-group">
     <%= label f, :user_id, class: "control-label" %>
     <%= select f, :user_id, Enum.map(@users, &{&1.name, &1.id}), prompt: "Not Assigned", class: "form-control form-control-lg" %>
     <%= error_tag f, :user_id %>
   </div>
+  <% end %>
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>

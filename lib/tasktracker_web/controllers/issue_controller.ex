@@ -11,16 +11,27 @@ defmodule TasktrackerWeb.IssueController do
     issues = Tasks.list_issues()
     users = Accounts.list_users()
     curr_user_id = if conn.assigns[:current_user], do: conn.assigns[:current_user].id, else: -1
+    filtered_users = users
+                     |> Enum.filter (fn user -> user.manager_id == curr_user_id end)
+    usersids_under_manager = filtered_users
+                             |> Enum.map(fn user -> user.id end)
+
     my_issues = issues
-               |> Enum.filter(
-                    fn issue -> curr_user_id == issue.user_id
-                    end
-                  )
+                |> Enum.filter(fn issue -> curr_user_id == issue.user_id end)
     open_issues = issues
-                 |> Enum.filter(fn issue -> !issue.completed end)
-    closed_issues = issues
-                   |> Enum.filter(fn issue -> issue.completed end)
-    render(conn, "index.html", open_issues: open_issues,closed_issues: closed_issues,my_issues: my_issues, users: users)
+                  |> Enum.filter(fn issue -> !issue.completed && issue.user_id == nil end)
+
+    manager_reportee_tasks = issues
+                             |> Enum.filter(fn issue -> issue.user_id in usersids_under_manager end)
+
+    render(
+      conn,
+      "index.html",
+      open_issues: open_issues,
+      my_issues: my_issues,
+      manager_reportee_tasks: manager_reportee_tasks,
+      users: users
+    )
   end
 
   def new(conn, _params) do
@@ -48,23 +59,28 @@ defmodule TasktrackerWeb.IssueController do
 
   def edit(conn, %{"id" => id}) do
     issue = Tasks.get_issue!(id)
-    if issue.user_id != nil && (!conn.assigns[:current_user] || conn.assigns[:current_user].id != issue.user_id) do
+    if issue.user_id != nil && (
+      !conn.assigns[:current_user] || conn.assigns[:current_user].id != issue.user_id) && conn.assigns[:current_user].role != "manager" do
       conn
       |> put_flash(:error, "Cannot update task belong to another user.")
       |> redirect(to: issue_path(conn, :index))
     else
+      users = Accounts.list_users
+      curr_user_id = if conn.assigns[:current_user], do: conn.assigns[:current_user].id, else: -1
+      users_under_manager = users
+                            |> Enum.filter (fn user -> user.manager_id == curr_user_id end)
       changeset = Tasks.change_issue(issue)
-      render(conn, "edit.html", issue: issue, users: Accounts.list_users, changeset: changeset)
+      render(conn, "edit.html", issue: issue, users: users_under_manager, changeset: changeset)
     end
-
   end
 
   def update(conn, %{"id" => id, "issue" => issue_params}) do
     issue = Tasks.get_issue!(id)
 
-    if issue.user_id != nil && (!conn.assigns[:current_user] || conn.assigns[:current_user].id != issue.user_id) do
+    if (
+         !conn.assigns[:current_user] || conn.assigns[:current_user].id != issue.user_id) && conn.assigns[:current_user].role == "user" do
       conn
-      |> put_flash(:error, "Cannot update task belong to another user.")
+      |> put_flash(:error, "Cannot update task belong to another user/ or not a manager.")
       |> redirect(to: issue_path(conn, :index))
     else
       case Tasks.update_issue(issue, issue_params) do
@@ -79,19 +95,32 @@ defmodule TasktrackerWeb.IssueController do
   end
 
   def delete(conn, %{"id" => id}) do
+    # deleting a record is a soft delete, and equivalent
+    # to marking it as completed
     issue = Tasks.get_issue!(id)
-    {:ok, _issue} = Tasks.delete_issue(issue)
-
-    conn
-    |> put_flash(:info, "Issue deleted successfully.")
-    |> redirect(to: issue_path(conn, :index))
+    if (issue && issue.completed == false) do
+      {:ok, _issue} = Tasks.update_issue(issue, %{completed: true})
+      conn
+      |> put_flash(:info, "Issue completed successfully.")
+      |> redirect(to: issue_path(conn, :index))
+    else
+      conn
+      |> put_flash(:error, "Failed to mark issue as completed.")
+      |> redirect(to: issue_path(conn, :index))
+    end
   end
 
   defp authenticate(conn, _) do
     if conn.assigns[:current_user] == nil do
-      conn |> put_flash(:info, "You must be logged in") |> redirect(to: page_path(conn, :index)) |> halt()
-      else
+      conn
+      |> put_flash(:info, "You must be logged in")
+      |> redirect(to: page_path(conn, :index))
+      |> halt()
+    else
       conn
     end
   end
 end
+
+
+
