@@ -21,14 +21,25 @@ import "phoenix_html"
 import $ from "jquery"
 
 function initTimetracking() {
+    console.log("init");
     if ($('.issue-time-blocks').length == 0) {
         return;
     }
 
+    console.log("block found");
     $('#startstop_button').click(startStopTimer);
     loadTimedata();
 }
 
+window.onload = function() {
+    if (window.jQuery) {
+        // jQuery is loaded
+        console.log("jquery loaded");
+    } else {
+        // jQuery is not loaded
+        console.log("jquery not loaded");
+    }
+}
 
 function loadTimedata() {
     console.log("loading time data");
