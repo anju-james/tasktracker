@@ -19,28 +19,16 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 function initTimetracking() {
-    console.log("init");
     if ($('.issue-time-blocks').length == 0) {
         return;
     }
 
-    console.log("block found");
     $('#startstop_button').click(startStopTimer);
     loadTimedata();
 }
 
-window.onload = function() {
-    if (window.jQuery) {
-        // jQuery is loaded
-        console.log("jquery loaded");
-    } else {
-        // jQuery is not loaded
-        console.log("jquery not loaded");
-    }
-}
 
 function loadTimedata() {
-    console.log("loading time data");
     $.get( window.issue_time_index_path, function(response) {
         let entryList = "";
         for (let i=0; i < response.data.length; i++) {
@@ -159,9 +147,7 @@ function deleteTimeEntry(ev) {
 };
 
 function startStopTimer(ev) {
-    console.log("start/stop timer");
     $('#startstop_button').each( (_, bb) => {
-        console.log("updating button state");
         let starttime = $(bb).data('starttime');
         if (starttime == "") {
             $(bb).text("Stop Timer");
