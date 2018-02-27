@@ -31,6 +31,7 @@ function initTimetracking() {
 
 
 function loadTimedata() {
+    console.log("loading time data");
     $.get( window.issue_time_index_path, function(response) {
         let entryList = "";
         for (let i=0; i < response.data.length; i++) {
@@ -149,7 +150,9 @@ function deleteTimeEntry(ev) {
 };
 
 function startStopTimer(ev) {
+    console.log("start/stop timer");
     $('#startstop_button').each( (_, bb) => {
+        console.log("updating button state");
         let starttime = $(bb).data('starttime');
         if (starttime == "") {
             $(bb).text("Stop Timer");
