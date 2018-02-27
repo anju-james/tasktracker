@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3f459247-ee2a-4441-a6e8-41b9a014e303" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/assets/brunch-config.js" afterPath="$PROJECT_DIR$/assets/brunch-config.js" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" afterPath="$PROJECT_DIR$/assets/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/lib/tasktracker_web/templates/issue/show.html.eex" afterPath="$PROJECT_DIR$/lib/tasktracker_web/templates/issue/show.html.eex" />
+      <change beforePath="$PROJECT_DIR$/lib/tasktracker_web/templates/layout/app.html.eex" afterPath="$PROJECT_DIR$/lib/tasktracker_web/templates/layout/app.html.eex" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +21,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="show.html.eex" pinned="false" current-in-tab="true">
+          <file leaf-file-name="show.html.eex" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/tasktracker_web/templates/issue/show.html.eex">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+                <state relative-caret-position="495">
+                  <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -34,7 +35,7 @@
             <entry file="file://$PROJECT_DIR$/assets/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="400">
-                  <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+                  <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -53,18 +54,18 @@
           <file leaf-file-name="brunch-config.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/brunch-config.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="309">
-                  <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+                <state relative-caret-position="60">
+                  <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.html.eex" pinned="false" current-in-tab="false">
+          <file leaf-file-name="app.html.eex" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/tasktracker_web/templates/layout/app.html.eex">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="16">
-                  <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+                <state relative-caret-position="508">
+                  <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -127,8 +128,8 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="96" column="49" lean-forward="false" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+                <state relative-caret-position="98">
+                  <caret line="18" column="56" lean-forward="false" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -147,9 +148,9 @@
       <find>1</find>
       <find>'ma</find>
       <find>window.updateTimeEntry</find>
-      <find>startStopTimer</find>
       <find>updateTimeEntry</find>
       <find>deleteTimeEntry</find>
+      <find>startStopTimer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,7 +182,6 @@
         <option value="$PROJECT_DIR$/lib/tasktracker_web/controllers/time_block_controller.ex" />
         <option value="$PROJECT_DIR$/lib/tasktracker/tasks/tasks.ex" />
         <option value="$PROJECT_DIR$/assets/css/app.css" />
-        <option value="$PROJECT_DIR$/assets/brunch-config.js" />
         <option value="$PROJECT_DIR$/assets/package.json" />
         <option value="$PROJECT_DIR$/lib/tasktracker_web/templates/issue/form.html.eex" />
         <option value="$PROJECT_DIR$/lib/tasktracker_web/controllers/user_controller.ex" />
@@ -190,8 +190,9 @@
         <option value="$PROJECT_DIR$/lib/tasktracker_web/templates/issue/new.html.eex" />
         <option value="$PROJECT_DIR$/lib/tasktracker_web/controllers/issue_controller.ex" />
         <option value="$PROJECT_DIR$/lib/tasktracker_web/templates/issue/show.html.eex" />
-        <option value="$PROJECT_DIR$/lib/tasktracker_web/templates/layout/app.html.eex" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/assets/brunch-config.js" />
+        <option value="$PROJECT_DIR$/lib/tasktracker_web/templates/layout/app.html.eex" />
       </list>
     </option>
   </component>
@@ -294,7 +295,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="" />
-    <property name="SearchEverywhereHistoryKey" value="show&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/issue/show.html.eex&#10;app.ht&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/layout/app.html.eex&#10;ap&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/js/app.js&#10;depl&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/deploy.sh&#10;br&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/brunch-config.js&#10;vendor&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/priv/static/js/vendor.js&#10;issu&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/controllers/issue_controller.ex&#10;usercon&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/controllers/user_controller.ex&#10;admin&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/user/adminform.html.eex&#10;issue&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/controllers/issue_controller.ex&#10;inde&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/issue/index.html.eex&#10;issue.&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker/tasks/issue.ex&#10;index&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/issue/index.html.eex&#10;timeb&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/controllers/time_block_controller.ex&#10;app&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/js/app.js&#10;pac&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/package.json&#10;pa&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/package.json&#10;app.c&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/css/app.css&#10;pack&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/package.json&#10;sho&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/issue/show.html.eex&#10;brunch-config.js&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/deps/phoenix/brunch-config.js&#10;bru&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/brunch-config.js&#10;team&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/user/team.html.eex&#10;router&#9;FILE&#9;file:///Users/anju/elixir/tasktracker/lib/tasktracker_web/router.ex&#10;rou&#9;FILE&#9;file:///Users/anju/elixir/tasktracker/deps/phoenix/lib/phoenix/router/route.ex" />
+    <property name="SearchEverywhereHistoryKey" value="b&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/brunch-config.js&#10;show&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/issue/show.html.eex&#10;app.ht&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/layout/app.html.eex&#10;ap&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/js/app.js&#10;depl&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/deploy.sh&#10;br&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/brunch-config.js&#10;vendor&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/priv/static/js/vendor.js&#10;issu&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/controllers/issue_controller.ex&#10;usercon&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/controllers/user_controller.ex&#10;admin&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/user/adminform.html.eex&#10;issue&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/controllers/issue_controller.ex&#10;inde&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/issue/index.html.eex&#10;issue.&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker/tasks/issue.ex&#10;index&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/issue/index.html.eex&#10;timeb&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/controllers/time_block_controller.ex&#10;app&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/js/app.js&#10;pac&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/package.json&#10;pa&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/package.json&#10;app.c&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/css/app.css&#10;pack&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/package.json&#10;sho&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/issue/show.html.eex&#10;brunch-config.js&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/deps/phoenix/brunch-config.js&#10;bru&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/assets/brunch-config.js&#10;team&#9;FILE&#9;file:///Users/anju/NEU/GITrepos/tasktracker/lib/tasktracker_web/templates/user/team.html.eex&#10;router&#9;FILE&#9;file:///Users/anju/elixir/tasktracker/lib/tasktracker_web/router.ex&#10;rou&#9;FILE&#9;file:///Users/anju/elixir/tasktracker/deps/phoenix/lib/phoenix/router/route.ex" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.standard" value="" />
@@ -336,16 +337,15 @@
       <workItem from="1519603838484" duration="386000" />
       <workItem from="1519605914056" duration="21695000" />
       <workItem from="1519741541942" duration="14000" />
-      <workItem from="1519741564961" duration="23410000" />
+      <workItem from="1519741564961" duration="24203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89019000" />
+    <option name="totallyTimeSpent" value="89812000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="817" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20577872" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -355,7 +355,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32825485" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -734,14 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/brunch-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -769,26 +761,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasktracker_web/templates/layout/app.html.eex">
+    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="400">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasktracker_web/templates/issue/show.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="495">
+          <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+    <entry file="file://$PROJECT_DIR$/assets/brunch-config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="96" column="49" lean-forward="false" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+        <state relative-caret-position="60">
+          <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasktracker_web/templates/layout/app.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
           <folding />
         </state>
       </provider>
