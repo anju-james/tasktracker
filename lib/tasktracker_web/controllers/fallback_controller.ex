@@ -12,6 +12,14 @@ defmodule TasktrackerWeb.FallbackController do
     |> render(TasktrackerWeb.ChangesetView, "error.json", changeset: changeset)
   end
 
+  def call(conn, {:error, "invalid user-identifier"}) do
+    conn
+    |> put_status(:unauthorized)
+    |> render(TasktrackerWeb.ErrorView, "unauthorized.json",
+         %{message: "Authentication failed. Invalid credentials or user doesnot exist"})
+  end
+
+
   def call(conn, {:error, :not_found}) do
     conn
     |> put_status(:not_found)

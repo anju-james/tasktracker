@@ -126,5 +126,10 @@ defmodule Tasktracker.Accounts do
     Repo.all(from user in User, where: user.manager_id == ^manager_id)
   end
 
+  def get_and_auth_user(email, pass) do
+    user = Repo.one(from u in User, where: u.email == ^email)
+    Comeonin.Argon2.check_pass(user, pass)
+  end
+
 
 end
