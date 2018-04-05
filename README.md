@@ -1,5 +1,6 @@
+### TaskTracker as a Single Page Application
 
-#### The following are the features of the TaskTracker:
+#### The following are the features of the new TaskTracker:
 Users of your app should be able to:
 
 * Users can register an account
